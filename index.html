@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 4 -GDTucker</title>
+
+	<script language="JavaScript" type="text/javascript">
+		<!--
+		//Real life Object
+		function koaObject(model, top, back, sides, neck, fretbd, elec) {
+			this.model = model;
+			this.top = top;
+			this.back = back;
+			this.sides = sides;
+			this.neck = neck;
+			this.fretbd = fretbd;
+			this.elec = elec;
+			this.showSpecifications = showSpecifications;
+		}
+
+		//Properties of the Object
+		var koawood = new Array();
+
+		koawood[0] = "Pro Series 5 Guitars";
+		koawood[1] = new koaObject("EF508KC", "Figured Koa", "Figured Koa", "Figured Koa", "Mahogany", "Rosewood", "CBT4B II preamp");
+		koawood[2] = new koaObject("P5DC", "Solid Spruce", "Solid Spruce", "Rosewood", "Mahogany", "Rosewood", "CoolTube \(CTP-3\)");
+		koawood[3] = new koaObject("P5DC-WB", "Solid Spruce", "Solid Rosewood", "Rosewood", "Mahogany", "Rosewood", "CoolTube \(CTP-3\)");
+		koawood[4] = new koaObject("P5JC", "Solid Spruce", "Solid Rosewood", "Rosewood", "Mahogany", "Rosewood", "CoolTube \(CTP-3\)");
+		koawood[5] = new koaObject("P5NC", "Solid Spruce", "Solid Rosewood", "Rosewood", "Mahogany", "Rosewood", "CoolTube \(CTP-3\)");
+
+
+
+		var len = koawood.length;
+
+		function showSpecifications() {
+			var info = "";
+			info += "Guitar model: " + this.model + "\n\n";
+			info += "Guitar top: " + this.top + "\n";
+			info += "Guitar back: " + this.back + "\n";
+			info += "Guitar sides: " + this.sides + "\n";
+			info += "Guitar neck: " + this.neck + "\n";
+			info += "Guitar fret board: " + this.fretbd + "\n";
+			info += "Guitar electronics: " + this.elec;
+			alert(info);
+		}
+
+		function showAllSpecifications() {
+			var info = "";
+			for (var i = 1; i < len; i++) {
+				info += "Guitar model: " + koawood[i].model + "\n\n";
+				info += "Guitar top: " + koawood[i].top + "\n";
+				info += "Guitar back: " + koawood[i].back + "\n";
+				info += "Guitar sides: " + koawood[i].sides + "\n";
+				info += "Guitar neck: " + koawood[i].neck + "\n";
+				info += "Guitar fret board: " + koawood[i].fretbd + "\n";
+				info += "Guitar electronics: " + koawood[i].elec + "\n\n";
+			}
+
+			alert(info);
+		}
+
+		//
+		-->
+	</script>
+
+</head>
+
+<body>
+	<hr />
+	<h1 style="text-align:center">Takamine EF508KC Guitar</h1>
+	<hr />
+	<p style="text-align:center"><b>Have you considered the Takamine Koa acoustic/electric guitar?</b> <br>
+		<img src="Media/banner.png" height="75px" align="center"></p>
+	<p style="text-align:justify-all, text-justify:inter-word;">This pro series acoustic/electric guitar is handcrafted using figured Koa wood.
+		The Acacia Koa tree grows in Hawaii, the only place it is known to grow.
+		The wood is highly revered by woodworkers around the world for its strength and beauty.
+		A great choice for those who enjoy playing
+		fingerstyle guitar, this instrument is a delight to see and listen to!</p><br>
+	<h2 style="text-align:center"><img src="Media/headstock.png" height="45px" align="center">A sign of quality!
+		<img src="Media/headstock.png" height="45px" align="center"></h2>
+	<hr />
+
+	<h2 style="text-align:center">Product Description</h2>
+	<hr />
+	<form style="text-align:center" name="prodKoa" id="prodKoa">
+		<strong>Select Takamine models to view information:</strong>
+		<select name="prodSpecs" onchange="koawood[this.selectedIndex].showSpecifications(); this.selectedIndex=0;">
+			<script language="JavaScript" type="text/javascript">
+				<!--
+				for (var i = 0; i < len; i++) {
+					if (i == 0)
+						document.write("<option>" + koawood[i]) + "</option>";
+					else
+						document.write("<option>" + koawood[i].model) + "</option>";
+				}
+
+				//
+				-->
+			</script>
+		</select>
+		<p>
+			<input type="button" value="Show All Specifications" onclick="showAllSpecifications();" />
+		</p>
+	</form>
+
+
+
+</body>
+
+</html>
